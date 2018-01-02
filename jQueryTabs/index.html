@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>动态增删选项卡</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+<div class="wrap">
+		<!-- 选项卡标题内容 -->
+		<div class="wrap-top">
+				<div class="tab-left">＜＜</div>
+				<div class="tab-right">＞＞</div>	
+				<div class="cont-tab">
+						<div class="cont-scroll">
+								<li class="active">
+									<span>HTML</span>
+									<a href="javascript:void(0)" class="del">X</a>
+								</li>
+								<li>
+									<span>CSS</span>
+									<a href="javascript:void(0)" class="del">X</a>
+								</li>
+								<li>
+									<span>jQuery</span>
+									<a href="javascript:void(0)" class="del">X</a>
+								</li>
+								<li>
+									<span>javascript</span>
+									<a href="javascript:void(0)" class="del">X</a>
+								</li>
+						</div>
+				</div>
+		</div>
+		<!-- 选项卡对应内容 -->
+
+		<div class="wrap-content">
+			<div class="cont-index">html</div>
+			<div class="cont-index">css</div>
+			<div class="cont-index">jquery</div>
+			<div class="cont-index">javascript</div>
+		</div>
+
+		<div class="Add">
+				<span></span>
+				<div class="memu">
+					<li class="add-cont">添加内容</li>
+					<li class="del-cont">删除全部</li>
+				</div>
+		</div>
+		<!-- 全屏添加内容遮罩 -->
+		<div class="full-add">
+				<div class="full-wrap">
+						<div class="full-top"><img src="img/add.png">添加内容<span>X</span></div>
+						<!-- 添加选项卡内容 -->
+						<div class="full-content">
+								<div class="full-inp">
+										<span>添加标题：</span>
+										<input type="" name="" placeholder="选项卡标题">
+								</div>
+								<div class="full-inp">
+										<span>添加内容：</span>
+										<textarea placeholder="选项相应内容"></textarea> 
+								</div>
+								<div class="full-inp">
+										<botton>确 认</botton>
+								</div>
+						</div>
+				</div>
+				
+		</div>
+		<!-- 全屏修改内容遮罩 -->
+		<div class="full-modify">
+				<div class="full-wrap">
+						<div class="full-top"><img src="img/modify.png">修改内容<span>X</span></div>
+						<!-- 添加选项卡内容 -->
+						<div class="full-content">
+								<div class="full-modi">
+										<span>修改标题：</span>
+										<input type="" name="" placeholder="">
+								</div>
+								<div class="full-modi">
+										<span>修改内容：</span>
+										<textarea placeholder=""></textarea> 
+								</div>
+								<div class="full-modi">
+										<botton>确认</botton>
+								</div>
+						</div>
+				</div>
+		</div>
+</div>
+
+<script src="js/jq.js"></script>
+<script src="js/TABS.js"></script>
+<script type="text/javascript">
+	$(".wrap").tabs({
+		range: 300
+	})
+</script>
+</body>
+</html>

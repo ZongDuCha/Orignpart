@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>鼠标悬停div边框动画</title>
+</head>
+<style type="text/css">
+.num{width: 130px;height: 130px;border: 2px solid #ccc;margin:50px 125px;float: left;position: relative;line-height: 230px;text-align: center;}
+</style>
+<body>
+
+
+<div class="num num1">num1</div>
+
+<div class="num num2">num2</div>
+
+<div class="num num3">num3</div>
+
+<div class="num num4">num4</div>
+
+<div class="num num5">num5</div>
+
+<div class="num num6">num6</div>
+
+<div class="num num7">num7</div>
+
+<div class="num num8">num8</div>
+
+<div class="num num9">num9</div>
+
+
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="divhover.js"></script>
+<script type="text/javascript">
+		$('.num1').num()
+		$(".num2").num({Type:'num2',Color:'#ff0000',speed:'300'});
+		$('.num3').num({Type:'num3'})
+		$('.num4').num({Type:'num4'})
+		$('.num5').num({Type:'num5'})
+		$('.num6').num({Type:'num6'})
+		$('.num7').num({Type:'num7'})
+		$('.num8').num({Type:'num8'})
+		$('.num9').num({Type:'num9'})
+
+</script>
+</body>
+</html>
