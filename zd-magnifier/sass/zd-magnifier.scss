@@ -47,14 +47,14 @@
                         border: 2px solid transparent;
                         transition:.3s;
                     }
-
-                    .active,img:hover{
-                        border:2px solid #d2cece;
-                    }
                     
                     &+li{
                         margin-left:10px;
                     }
+                }
+
+                .active img,img:hover{
+                    border:2px solid #4b8abf;
                 }
             }
         }
