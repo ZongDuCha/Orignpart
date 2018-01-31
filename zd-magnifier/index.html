@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/zd-magnifier.css">
+</head>
+<body>
+<div class="zd-container">
+	<div class="zd-wrapper">
+
+		<!-- 图片显示 -->
+		<div class="zd-wrapper--img">
+			<img src="img/1.jpg" alt="">
+		</div>
+
+		<!-- 缩略图 -->
+		<div class="zd-wrapper--list">
+			<!-- 左右 -->
+			<div class="list-next"><</div>
+			<div class="list-prev">></div>
+
+			<ul>
+				<li><img src="img/1.jpg" alt=""></li>
+				<li><img src="img/2.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script src="js/jq.js"></script>
+<script src="js/zd-magnifier.js"></script>
+<script>
+	$('.zd-container').zdMagnifier()
+</script>
+</html>
