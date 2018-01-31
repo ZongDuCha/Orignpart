@@ -21,6 +21,7 @@
     .zd-container .zd-wrapper .zd-wrapper--list .list-next, .zd-container .zd-wrapper .zd-wrapper--list .list-prev {
       position: absolute;
       top: 0;
+      z-index: 3;
       height: 100%;
       cursor: pointer;
       text-align: center;
@@ -32,21 +33,28 @@
       left: 0; }
     .zd-container .zd-wrapper .zd-wrapper--list .list-prev {
       right: 0; }
-    .zd-container .zd-wrapper .zd-wrapper--list ul {
+    .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper {
       height: 100%;
-      width: 100%; }
-      .zd-container .zd-wrapper .zd-wrapper--list ul li {
-        list-style: none;
-        float: left;
+      width: 100%;
+      z-index: 1;
+      position: relative; }
+      .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul {
         height: 100%;
-        padding: 5px;
-        cursor: pointer; }
-        .zd-container .zd-wrapper .zd-wrapper--list ul li img {
-          border: 2px solid transparent;
-          transition: .3s; }
-        .zd-container .zd-wrapper .zd-wrapper--list ul li + li {
-          margin-left: 10px; }
-      .zd-container .zd-wrapper .zd-wrapper--list ul .active img, .zd-container .zd-wrapper .zd-wrapper--list ul img:hover {
+        position: absolute;
+        top: 0; }
+        .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li {
+          list-style: none;
+          float: left;
+          height: 100%;
+          padding: 5px;
+          cursor: pointer; }
+          .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li img {
+            border: 2px solid transparent;
+            transition: .3s;
+            border-radius: 2px; }
+          .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li + li {
+            margin-left: 9px; }
+      .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper .active img, .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper img:hover {
         border: 2px solid #4b8abf; }
 
 /*# sourceMappingURL=zd-magnifier.css.map */

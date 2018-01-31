@@ -22,7 +22,7 @@
             position: relative;padding:0 27px;
 
             .list-next,.list-prev{
-                position: absolute;top: 0;
+                position: absolute;top: 0;z-index:3;
                 height:100%;cursor:pointer;text-align: center;
                 background:#eae6e6;width:25px;    color: #5d5656;
                 font-family: '黑体';
@@ -36,20 +36,24 @@
                 right:0;
             }
             
-            ul{
-                height:100%;width:100%;
-                li{
-                    list-style: none;float: left;
-                    height:100%;
-                    padding:5px;cursor: pointer;
+            .list-wrapper{
+                height:100%;width:100%;z-index: 1;position: relative;
 
-                    img{
-                        border: 2px solid transparent;
-                        transition:.3s;
-                    }
-                    
-                    &+li{
-                        margin-left:10px;
+                ul{
+                    height: 100%;position:absolute;top:0;
+                    li{
+                        list-style: none;float: left;
+                        height:100%; 
+                        padding:5px;cursor: pointer;
+    
+                        img{
+                            border: 2px solid transparent;
+                            transition:.3s;border-radius: 2px;
+                        }
+                        
+                        &+li{
+                            margin-left:9px;
+                        }
                     }
                 }
 
