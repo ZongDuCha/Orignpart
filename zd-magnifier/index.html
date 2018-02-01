@@ -13,7 +13,12 @@
 
 		<!-- 图片显示 -->
 		<div class="zd-wrapper--img">
-			<img src="img/1.jpg" alt="">
+			<div class="move-img"></div>
+		</div>
+
+		<!-- 大图显示 -->
+		<div class="big-img">
+
 		</div>
 
 		<!-- 缩略图 -->
@@ -32,6 +37,14 @@
 					<li><img src="img/2.jpg" alt=""></li>
 					<li><img src="img/1.jpg" alt=""></li>
 					<li><img src="img/2.jpg" alt=""></li>
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
 				</ul>
 			</div>
 		</div>
@@ -41,6 +54,9 @@
 <script src="js/jq.js"></script>
 <script src="js/zd-magnifier.js"></script>
 <script>
-	$('.zd-container').zdMagnifier()
+	$('.zd-container').zdMagnifier({
+		'height':'420px',
+		'width':'420px'
+	})
 </script>
 </html>

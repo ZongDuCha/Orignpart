@@ -1,23 +1,54 @@
 @charset "UTF-8";
-* {
+.zd-container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0; }
-
-.zd-container {
-  width: 400px;
-  height: auto;
-  margin: 0 auto; }
-  .zd-container * {
-    box-sizing: border-box; }
-  .zd-container img {
-    max-width: 100%;
-    max-height: 100%; }
+.zd-container img {
+  max-width: 100%;
+  max-height: 100%; }
+.zd-container .zd-wrapper {
+  position: relative; }
+  .zd-container .zd-wrapper .zd-wrapper--img {
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    width: 100%;
+    cursor: move;
+    position: relative;
+    overflow: hidden; }
+    .zd-container .zd-wrapper .zd-wrapper--img img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+    .zd-container .zd-wrapper .zd-wrapper--img .move-img {
+      box-shadow: 0 0 5px #615e5e;
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      opacity: 0.35;
+      background: #5b9ae8;
+      z-index: 3; }
+  .zd-container .zd-wrapper .big-img {
+    position: absolute;
+    left: 101%;
+    top: 0;
+    overflow: hidden; }
+    .zd-container .zd-wrapper .big-img img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: unset;
+      max-height: unset; }
   .zd-container .zd-wrapper .zd-wrapper--list {
     width: 100%;
     height: 70px;
     line-height: 70px;
     position: relative;
-    padding: 0 27px; }
+    padding: 0 27px;
+    overflow: hidden; }
     .zd-container .zd-wrapper .zd-wrapper--list .list-next, .zd-container .zd-wrapper .zd-wrapper--list .list-prev {
       position: absolute;
       top: 0;
@@ -25,10 +56,12 @@
       height: 100%;
       cursor: pointer;
       text-align: center;
-      background: #eae6e6;
+      background: #fff;
       width: 25px;
       color: #5d5656;
-      font-family: '榛戜綋'; }
+      font-family: '黑体';
+      font-size: 33px;
+      border-radius: 2px; }
     .zd-container .zd-wrapper .zd-wrapper--list .list-next {
       left: 0; }
     .zd-container .zd-wrapper .zd-wrapper--list .list-prev {
@@ -39,22 +72,25 @@
       z-index: 1;
       position: relative; }
       .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul {
-        height: 100%;
-        position: absolute;
-        top: 0; }
+        height: 100%; }
         .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li {
           list-style: none;
           float: left;
           height: 100%;
+          width: 88px;
+          height: 100%;
+          text-align: center;
+          background: #fff;
+          border: 2px solid transparent;
           padding: 5px;
-          cursor: pointer; }
+          cursor: pointer;
+          -webkit-transition: .2s;
+          transition: .2s; }
           .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li img {
-            border: 2px solid transparent;
-            transition: .3s;
             border-radius: 2px; }
           .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper ul li + li {
             margin-left: 9px; }
-      .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper .active img, .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper img:hover {
+      .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper .active, .zd-container .zd-wrapper .zd-wrapper--list .list-wrapper li:hover {
         border: 2px solid #4b8abf; }
 
 /*# sourceMappingURL=zd-magnifier.css.map */
