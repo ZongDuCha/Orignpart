@@ -33,8 +33,6 @@
         // 缩略图li
         var _liImg = el.find('.list-wrapper li');
 
-        
-
         // 获取active的位置
         function getActive(){
             var _Active = el.find('.list-wrapper .active').index();
@@ -75,7 +73,6 @@
         
         var bW = bigImg.width(),bH = bigImg.height(),time;
         wrapperImg.hover(function(e){
-            clearTimeout(time)
             bigImg.show();
             moveImg.stop().show();
             var imgPos = {
@@ -84,7 +81,6 @@
             }
             
             moveImg.stop().css({'width':bW/_o.zoom,'height':bH/_o.zoom})
-
             // 大图移动
             bigImg
                 .find('img')
@@ -116,7 +112,6 @@
                                         :(-_y + imgPos.top)*_o.zoom},0)
             })
         },function(){
-            clearTimeout(time)
             bigImg.hide();
             moveImg.hide();
         })
@@ -151,7 +146,6 @@
 
         _next.on('click',function(){
             leftIndex--;
-            
             // 移动次数 < 2
             if(leftIndex < 2){
                 _listUl.stop().animate({'marginLeft':0});
