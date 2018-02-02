@@ -34,7 +34,8 @@
     position: absolute;
     left: 101%;
     top: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    display: none; }
     .zd-container .zd-wrapper .big-img img {
       position: absolute;
       left: 0;

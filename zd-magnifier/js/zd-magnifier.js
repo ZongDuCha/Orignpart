@@ -11,7 +11,7 @@
             height: '420px',
             zoom: 4
         }
-
+        
         var _o = $.extend({},def,options)
 
         var bigImg = el.find('.big-img')
@@ -72,26 +72,27 @@
             bigImg.attr('style','height:'+_o.height+';width:'+_o.width)
             el.attr({'style':'width:'+_o.width})
         })();
-            
+        
+        var bW = bigImg.width(),bH = bigImg.height(),time;
         wrapperImg.hover(function(e){
-            // _x:鼠标在中心点的x位置
-            // ——y:鼠标在中心点的y位置
-            moveImg.show();
+            clearTimeout(time)
+            bigImg.show();
+            moveImg.stop().show();
             var imgPos = {
                 top: (wrapperImg.height() - staticImg.height())/2,
                 left: (wrapperImg.width() - staticImg.width())/2,
             }
-
-            var bW = bigImg.width(),bH = bigImg.height();
-            moveImg.css({'width':bW/_o.zoom,'height':bH/_o.zoom})
+            
+            moveImg.stop().css({'width':bW/_o.zoom,'height':bH/_o.zoom})
 
             // 大图移动
             bigImg
                 .find('img')
+                .stop()
                 .attr('style','width:' + staticImg.width()*_o.zoom + 'px;height:' + staticImg.height()*_o.zoom + 'px')
             wrapperImg.mousemove(function(e){
+                moveImg.stop()
                 // mousemove每秒触发n次.... 用setTimeout优化下
-                setTimeout(function(){
                     _x = e.pageX - moveImg.outerWidth(true)/2 - 10;
                     _y = e.pageY - moveImg.outerHeight(true)/2 - 10; 
                     // top，left限制
@@ -105,21 +106,21 @@
                     _x >= staticImg.width() - moveImg.width() + imgPos.left
                         ? _x = staticImg.width() - moveImg.width() + imgPos.left
                         : 0
-                    moveImg.animate({'left':_x,'top':_y},0)
+                    moveImg.animate({'left':_x,'top':_y},1)
 
                     // 大图img 位置： 
                     // left = 移动框左上角x = 当前鼠标x - 移动框宽度
                     // top = 移动框左上角y = 当前鼠标y - 移动框高度
                     bigImg.find('img')
-                        .stop()
                         .animate({'left':(-_x + imgPos.left)*_o.zoom,'top'
                                         :(-_y + imgPos.top)*_o.zoom},0)
-                },25)
             })
         },function(){
+            clearTimeout(time)
+            bigImg.hide();
             moveImg.hide();
-            el.find('*').addBack().stop();
         })
+        
         // 触摸缩略图
         _liImg.on('mouseover',function(){
             $(this)
