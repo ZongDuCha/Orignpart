@@ -1,36 +1,39 @@
+/**
+ * https://github.com/ZongDuCha/Orignpart/tree/master/zd-magnifier
+ * 
+ * QQ: 1367243169
+ */
 !(function($){
     $.fn.zdMagnifier = function(options){
         var el = $(this);
-
         var def = {
-            width: '400px',
-            height: '500px',
-            zoom: 3
+            width: '420px',
+            height: '420px',
+            zoom: 4
         }
 
         var _o = $.extend({},def,options)
 
+        var bigImg = el.find('.big-img')
+
         var wrapperImg = el.find('.zd-wrapper--img')
-
         var staticImg = el.find('.zd-wrapper--img img')
-
         var moveImg = el.find('.zd-wrapper--img .move-img')
 
         var wrapList = el.find('.zd-wrapper--list');
-
-        var bigImg = el.find('.big-img')
-
-        // list-wrapper
-        var _listWrapper = el.find('.list-wrapper')
-
         // next
         var _next = el.find('.zd-wrapper--list .list-next')
         // prev
         var _prev = el.find('.zd-wrapper--list .list-prev')
+        
+        // list-wrapper
+        var _listWrapper = el.find('.list-wrapper')
         // ul
         var _listUl = el.find('.list-wrapper ul');
         // 缩略图li
         var _liImg = el.find('.list-wrapper li');
+
+        
 
         // 获取active的位置
         function getActive(){
@@ -39,21 +42,18 @@
         }
 
         // 设置wrapper 的图片
-        function setWrapImg(img){
+        function setWrapImg(imgSrc){
             !wrapperImg.find('img').length 
-                ?  wrapperImg.append('<img src="'+img+'"width="350"/>')
-                :  wrapperImg.find('img').attr('src',img)
+                ?  wrapperImg.append('<img src="'+imgSrc+'"/>')
+                :  wrapperImg.find('img').attr('src',imgSrc)
             staticImg = el.find('.zd-wrapper--img img')
             
             !bigImg.find('img').length
-                ? bigImg.append('<img src="'+img+'"/>')
-                : bigImg.find('img').attr('src',img)
-                
-            
+                ? bigImg.append('<img src="'+imgSrc+'"/>')
+                : bigImg.find('img').attr('src',imgSrc)
         }
 
-        var imgSrc;
-        var ulWidth = new Number();
+        var imgSrc,ulWidth = 0;
         !(function(){
             // 给第一个缩略图 加active
             var _liActive = getActive();
@@ -71,60 +71,56 @@
             wrapperImg.attr({'style':';width:'+_o.width+';height:'+_o.height+''})
             bigImg.attr('style','height:'+_o.height+';width:'+_o.width)
             el.attr({'style':'width:'+_o.width})
+        })();
             
+        wrapperImg.hover(function(e){
+            // _x:鼠标在中心点的x位置
+            // ——y:鼠标在中心点的y位置
+            moveImg.show();
+            var imgPos = {
+                top: (wrapperImg.height() - staticImg.height())/2,
+                left: (wrapperImg.width() - staticImg.width())/2,
+            }
 
-            wrapperImg.hover(function(e){
-                var _x = e.pageX - moveImg.outerWidth(true)/2 - 10;
-                var _y = e.pageY - moveImg.outerHeight(true)/2 - 10;
-                moveImg.stop().css({'left':_x,'top':_y}).show();
-                // 大图移动
-                bigImg
-                    .find('img')
-                    .attr('style','width:' + _o.width*_o.zoom + 'px;height:' + _o.height*_o.zoom + 'px')
-                wrapperImg.mousemove(function(e){
+            var bW = bigImg.width(),bH = bigImg.height();
+            moveImg.css({'width':bW/_o.zoom,'height':bH/_o.zoom})
 
-                    // 划入显示移动div
-                    var imgPos = {
-                        top: (wrapperImg.height() - staticImg.height())/2,
-                        left: (wrapperImg.width() - staticImg.width())/2,
-                    }
-
-                    var _x = e.pageX - moveImg.outerWidth(true)/2 - 10;
-                    var _y = e.pageY - moveImg.outerHeight(true)/2 - 10; 
-
-                    
+            // 大图移动
+            bigImg
+                .find('img')
+                .attr('style','width:' + staticImg.width()*_o.zoom + 'px;height:' + staticImg.height()*_o.zoom + 'px')
+            wrapperImg.mousemove(function(e){
+                // mousemove每秒触发n次.... 用setTimeout优化下
+                setTimeout(function(){
+                    _x = e.pageX - moveImg.outerWidth(true)/2 - 10;
+                    _y = e.pageY - moveImg.outerHeight(true)/2 - 10; 
+                    // top，left限制
                     _y <= imgPos.top ?  _y = imgPos.top : 0
                     _x <= imgPos.left ?  _x = imgPos.left: 0
-
-
-                    // 最下边：图片高度 - 移动的宽度 + 宽度间隙
+                    // 最下边限制：图片高度 - 移动的宽度 + 宽度间隙
                     _y >= staticImg.height() - moveImg.height() + imgPos.top 
                         ? _y = staticImg.height() - moveImg.height() + imgPos.top
-                        : ''
-
-                    // 最右边：图片宽度 - 移动的宽度 + 宽度间隙
+                        : 0
+                    // 最右边限制：图片宽度 - 移动的宽度 + 宽度间隙
                     _x >= staticImg.width() - moveImg.width() + imgPos.left
                         ? _x = staticImg.width() - moveImg.width() + imgPos.left
-                        : ''
-                    
+                        : 0
                     moveImg.animate({'left':_x,'top':_y},0)
 
-                    bigImg.find('img').stop().animate({'left':(-_x + imgPos.left),'top':(-_y - imgPos.top)*_o.zoom},1)
-
-                    console.log((-_x + imgPos.left)*_o.zoom,(-_y + imgPos.top)*_o.zoom)
-                    
-                })
-            },function(){
-                moveImg.hide()
+                    // 大图img 位置： 
+                    // left = 移动框左上角x = 当前鼠标x - 移动框宽度
+                    // top = 移动框左上角y = 当前鼠标y - 移动框高度
+                    bigImg.find('img')
+                        .stop()
+                        .animate({'left':(-_x + imgPos.left)*_o.zoom,'top'
+                                        :(-_y + imgPos.top)*_o.zoom},0)
+                },25)
             })
-
-        })();
-
-        
-
-        
-
-        // 点击缩略图
+        },function(){
+            moveImg.hide();
+            el.find('*').addBack().stop();
+        })
+        // 触摸缩略图
         _liImg.on('mouseover',function(){
             $(this)
                 .addClass('active')
@@ -134,7 +130,6 @@
 
             imgSrc = $(this).find('img').attr('src')
             setWrapImg(imgSrc)
-            
         })
 
         var leftIndex = 1;
@@ -162,7 +157,6 @@
                 leftIndex=1;
                 return false;
             }
-            
             var wrapWidth = _listWrapper.width()
             var ulLeft = -wrapWidth/2 * leftIndex
             _listUl.stop().animate({'margin-left':ulLeft})
