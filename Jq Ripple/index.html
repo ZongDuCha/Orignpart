@@ -20,9 +20,10 @@
 <script src="jq.js"></script>
 <script>
 $('[class*=bt]').click(function(e){
+    var _this = $(this);
+    _this.remove('.rip')
     var _x = e.pageX;
     var _y = e.pageY;
-    var _this = $(this);
     var max = Math.max(_this.width(),_this.height());
     var off = {
         'left': _this.offset().left,
@@ -34,11 +35,7 @@ $('[class*=bt]').click(function(e){
         'left': _x - off.left - max/2 + 'px',
         'width': max,
         'height':max,
-        
     })
-    setTimeout(function(){
-        _this.find('.rip').remove()
-    },500)
 })
 </script>
 </html>

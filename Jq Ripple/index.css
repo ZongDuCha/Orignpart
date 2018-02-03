@@ -50,7 +50,7 @@ button {
 }
 
 .rip {
-  background: rgba(0, 0, 0, 0.344);
+  background: rgba(247, 243, 243, 0.344);
   transform: scale(0);
   position: absolute;
   border-radius: 100%;
