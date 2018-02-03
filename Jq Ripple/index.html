@@ -19,23 +19,53 @@
 </body>
 <script src="jq.js"></script>
 <script>
-$('[class*=bt]').click(function(e){
-    var _this = $(this);
-    _this.remove('.rip')
-    var _x = e.pageX;
-    var _y = e.pageY;
-    var max = Math.max(_this.width(),_this.height());
-    var off = {
-        'left': _this.offset().left,
-        'top': _this.offset().top
+// jquery
+
+// $('[class*=bt]').click(function(e){
+//     var _this = $(this);
+//     _this.remove('.rip')
+//     var _x = e.pageX;
+//     var _y = e.pageY;
+//     var max = Math.max(_this.width(),_this.height());
+//     var off = {
+//         'left': _this.offset().left,
+//         'top': _this.offset().top
+//     }
+//     $ripple = $('<span class="rip"/>')
+//     $ripple.appendTo(_this).css({
+//         'top': _y - off.top - max/2 + 'px',
+//         'left': _x - off.left - max/2 + 'px',
+//         'width': max,
+//         'height':max,
+//     })
+// })
+
+
+// 原生js
+
+var bt = document.querySelectorAll('[class*=bt]');
+bt.forEach(function(s,i){
+    bt[i].onclick = function(e){
+        var _this = this;
+        document.querySelector('.rip') ? _this.removeChild(del) : ''
+        
+        var _x = e.pageX;
+        var _y = e.pageY;
+        var off = {
+            'left': _this.offsetLeft,
+            'top': _this.offsetTop
+        }
+        var max = Math.max(_this.offsetWidth,_this.offsetHeight)
+
+        var ripple = document.createElement('span');
+        ripple.className = 'rip';
+        ripple.style.cssText += 'width:' 
+            + max + 'px;height:' 
+            + max + 'px;left:' 
+            + (_x - off.left - max/2 + 'px;top:' )
+            + (_y - off.top - max/2 +'px');
+        _this.appendChild(ripple)
     }
-    $ripple = $('<span class="rip"/>')
-    $ripple.appendTo(_this).css({
-        'top': _y - off.top - max/2 + 'px',
-        'left': _x - off.left - max/2 + 'px',
-        'width': max,
-        'height':max,
-    })
 })
 </script>
 </html>
