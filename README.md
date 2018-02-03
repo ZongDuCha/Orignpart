@@ -9,4 +9,4 @@
 
 [jQuery图片放大镜，演示地址：](http://www.zongdusir.top/Orignpart/zd-magnifier/)http://www.zongdusir.top/Orignpart/zd-magnifier/
 
-[jQuery点击按钮水波纹，演示地址：](http://www.zongdusir.top/Orignpart/Jq Ripple/)http://www.zongdusir.top/Orignpart/Jq Ripple/
+[jQuery点击按钮水波纹，演示地址：](http://www.zongdusir.top/Orignpart/Jq%20Ripple/)http://www.zongdusir.top/Orignpart/Jq%20Ripple/
