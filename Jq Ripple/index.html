@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+    <button class="bt1">按钮1</button>
+    <button class="bt2">按钮2</button>
+    <button class="bt3">按钮3</button>
+    <button class="bt4">按钮4</button>
+    <button class="bt5">按钮5</button>
+    <button class="bt6">按钮6</button>
+</div>
+</body>
+<script src="jq.js"></script>
+<script>
+$('[class*=bt]').click(function(e){
+    var _x = e.pageX;
+    var _y = e.pageY;
+    var _this = $(this);
+    var max = Math.max(_this.width(),_this.height());
+    var off = {
+        'left': _this.offset().left,
+        'top': _this.offset().top
+    }
+    $ripple = $('<span class="rip"/>')
+    $ripple.appendTo(_this).css({
+        'top': _y - off.top - max/2 + 'px',
+        'left': _x - off.left - max/2 + 'px',
+        'width': max,
+        'height':max,
+        
+    })
+    setTimeout(function(){
+        _this.find('.rip').remove()
+    },500)
+})
+</script>
+</html>

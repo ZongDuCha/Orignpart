@@ -107,13 +107,12 @@
 			strSec = "<div class='cont-index'>"+sect+"</div>"
 			contScr.append(strLi)
 			wrapCont.append(strSec)
-			inpTitle.val('')
-			inpSect.val('')
+			inpTitle.val(inpSect.val(''))
 			Add.hide()
 			resfEl()
 			contLi.eq(contLi.length-1).addClass('active').siblings(this).removeClass('active')
 			contIndex.eq(contLi.length - 1).show().siblings(this).hide()
-			liWidth()
+			getliWidth()
 		})
 
 
@@ -134,7 +133,7 @@
 			contIndex.eq(secIndex).text(modifySec.val())
 
 			modify.hide()
-			liWidth()
+			getliWidth()
 		})
 
 		
@@ -153,13 +152,14 @@
 		})
 
 		// 标签父容器 宽度
-		liWidth()
-		function liWidth(){
+		getliWidth()
+		function getliWidth(){
 			var contLiWidth = 0;
 			contLi.each(function(){
 				contLiWidth += $(this).outerWidth(true)
 			})
-			contScr.css('width',contLiWidth)
+			contScr.css('width',contLiWidth + 2)
+			console.log(contLiWidth + 2)
 		}
 	}	
 })(jQuery);
