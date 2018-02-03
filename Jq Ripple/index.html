@@ -17,7 +17,7 @@
     <button class="bt6">按钮6</button>
 </div>
 </body>
-<script src="jq.js"></script>
+<!-- <script src="jq.js"></script> -->
 <script>
 // jquery
 
@@ -47,8 +47,10 @@ var bt = document.querySelectorAll('[class*=bt]');
 bt.forEach(function(s,i){
     bt[i].onclick = function(e){
         var _this = this;
-        document.querySelector('.rip') ? _this.removeChild(del) : ''
-        
+
+        var del = document.querySelector('.rip');
+        del ? del.parentNode.removeChild(del) : ''
+
         var _x = e.pageX;
         var _y = e.pageY;
         var off = {
