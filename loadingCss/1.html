@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>居中登录框</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .login{
+            position: absolute;
+            width:260px;
+            top:0;
+            left:0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            height: 300px;
+            background-color: white;  
+            box-shadow:5px 2px 6px #000;
+            clear: both;
+        }
+        .test_style{
+            top:20px;
+            width: 160px;
+            height: 30px;
+            display: block;
+            margin: 30px 50px ;
+            border: 1px solid gray;
+        }
+        .button_style{
+            display: block;
+            width: 160px;
+            height: 40px;
+            margin: 10px 50px;
+            background-color: #5755d9;
+            color: white;
+            border: 1px solid #5755d9;
+         
+        }
+        #l{
+            width: 160px;
+            height: 30px;
+            display: block;
+            margin: 5px 50px ;
+            margin-top: 30px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        #head_style{
+            width: 100%;
+            height: 60px;
+            background-color:#FF3333;
+        }
+        .img_style{
+        
+            width: 40px;
+            height: 40px;
+            margin: 10px 20px;
+            margin-left: 60px;
+            float: left;
+        }
+        .head_font{
+            position: relative;
+            /* background-color: wheat; */
+           text-align: center;
+           top: 17px;
+           padding: 0px;
+           font-size: 25px;
+        }
+        #rwm{
+            margin-top: 10px;
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body background="../class/img/580074394acf5.jpg">
+
+    <div id="head_style">
+        <img  class="img_style"  src="../class/img/123.jpg" alt="">
+        <span class="head_font">
+            <font color="white">很牛B_IT信息管理系统</font>
+        </span>
+    </div>
+    <div id="rwm">
+        <font>软件二维码信息</font>
+    </div>
+    <div id="login" class="login">
+        <span id="l"><font color="red">欢迎登录</font></span>
+        <input type="text" name="username" id="username" class="test_style" placeholder="用户名">
+        <input type="text" name="password" id="password" class="test_style" placeholder="密码">
+        <button class="button_style">登录</button>
+        
+    </div>
+
+</body>
+</html>
