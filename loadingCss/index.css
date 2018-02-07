@@ -1,6 +1,7 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 [class*=load] {
   margin: 20px;
@@ -11,7 +12,8 @@
   border: 1px solid #ccc;
   position: relative;
   float: left;
-  text-align: center; }
+  text-align: center;
+}
 
 .pos {
   position: relative;
@@ -22,10 +24,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto; }
+  margin: auto;
+}
 
 span {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .load1 span {
   margin: 6px;
@@ -35,24 +39,31 @@ span {
   border-radius: 2px;
   position: absolute;
   top: 0;
-  animation: 1s infinite load1; }
-  .load1 span:nth-child(4) {
-    animation-delay: 0.48s;
-    left: 80px; }
-  .load1 span:nth-child(3) {
-    animation-delay: 0.36s;
-    left: 60px; }
-  .load1 span:nth-child(2) {
-    animation-delay: 0.24s;
-    left: 40px; }
-  .load1 span:nth-child(1) {
-    animation-delay: 0.12s;
-    left: 20px; }
+  animation: 1s infinite load1;
+}
+.load1 span:nth-child(4) {
+  animation-delay: 0.48s;
+  left: 80px;
+}
+.load1 span:nth-child(3) {
+  animation-delay: 0.36s;
+  left: 60px;
+}
+.load1 span:nth-child(2) {
+  animation-delay: 0.24s;
+  left: 40px;
+}
+.load1 span:nth-child(1) {
+  animation-delay: 0.12s;
+  left: 20px;
+}
 
 @keyframes load1 {
   50% {
     height: 10px;
-    top: 25px; } }
+    top: 25px;
+  }
+}
 .load2 span {
   border-radius: 100%;
   box-shadow: 0 3px 0 #1282eb;
@@ -62,68 +73,94 @@ span {
   top: 0;
   bottom: 0;
   margin: auto;
-  animation: load2-1 infinite 1.1s linear; }
-  .load2 span:nth-child(1) {
-    width: 20px;
-    height: 20px; }
-  .load2 span:nth-child(2) {
-    width: 40px;
-    height: 40px; }
-  .load2 span:nth-child(3) {
-    width: 60px;
-    height: 60px; }
-  .load2 span:nth-child(2) {
-    animation: load2-2 infinite 1s linear; }
+  animation: load2-1 infinite 1.1s linear;
+}
+.load2 span:nth-child(1) {
+  width: 20px;
+  height: 20px;
+}
+.load2 span:nth-child(2) {
+  width: 40px;
+  height: 40px;
+}
+.load2 span:nth-child(3) {
+  width: 60px;
+  height: 60px;
+}
+.load2 span:nth-child(2) {
+  animation: load2-2 infinite 1s linear;
+}
 
 @keyframes load2-1 {
   0% {
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   50% {
-    transform: rotate(-720deg); } }
+    transform: rotate(-720deg);
+  }
+}
 @keyframes load2-2 {
   0% {
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   50% {
-    transform: rotate(720deg); } }
+    transform: rotate(720deg);
+  }
+}
 .load3 span {
   border-radius: 50%;
   background: #1282eb;
   width: 5px;
   height: 5px;
   margin: 5px;
-  animation: load3 infinite 0.8s linear; }
-  .load3 span:nth-child(3) {
-    animation-delay: 0.5s; }
-  .load3 span:nth-child(2) {
-    animation-delay: 1s; }
-  .load3 span:nth-child(1) {
-    animation-delay: 1.5s; }
+  animation: load3 infinite 0.8s linear;
+}
+.load3 span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.load3 span:nth-child(2) {
+  animation-delay: 1s;
+}
+.load3 span:nth-child(1) {
+  animation-delay: 1.5s;
+}
 
 @keyframes load3 {
   50% {
-    transform: scale(3); } }
+    transform: scale(3);
+  }
+}
 .load4 span {
   width: 10px;
   height: 10px;
   background: #1282eb;
   border-radius: 50%;
-  animation: .7s infinite load4; }
-  .load4 span:nth-child(1) {
-    animation-delay: 0.3s; }
-  .load4 span:nth-child(2) {
-    animation-delay: 0.6s; }
-  .load4 span:nth-child(3) {
-    animation-delay: 0.9s; }
-  .load4 span:nth-child(4) {
-    animation-delay: 1.2s; }
-  .load4 span:nth-child(5) {
-    animation-delay: 1.5s; }
+  animation: .7s infinite load4;
+}
+.load4 span:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.load4 span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.load4 span:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.load4 span:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.load4 span:nth-child(5) {
+  animation-delay: 1.5s;
+}
 
 @keyframes load4 {
   10% {
-    transform: translate(0, 10px); }
+    transform: translate(0, 10px);
+  }
   50% {
-    transform: translate(0, -15px); } }
+    transform: translate(0, -15px);
+  }
+}
 .load5 span {
   position: absolute;
   top: 0;
@@ -135,80 +172,169 @@ span {
   height: 1px;
   animation: 1s infinite load5 linear;
   border-radius: 50%;
-  background: #1282eb; }
-  .load5 span:nth-child(2) {
-    animation: 2s infinite load5 linear; }
+  background: #1282eb;
+}
+.load5 span:nth-child(2) {
+  animation: 2s infinite load5 linear;
+}
 
 @keyframes load5 {
   100% {
     transform: scale(100);
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
 .load6 .pos {
   width: 50px;
   height: 50px;
-  overflow: hidden; }
-  .load6 .pos span {
-    position: relative;
-    position: absolute;
-    background: #1282eb;
-    animation-delay: 3s;
-    opacity: 1; }
-    .load6 .pos span:nth-child(1) {
-      top: 0;
-      left: 0;
-      height: 1px;
-      animation: load6-1 infinite linear 0.5s;
-      width: 50%;
-      transform: translate(-100%, 0); }
-    .load6 .pos span:nth-child(2) {
-      top: 0;
-      right: 0;
-      width: 1px;
-      animation: load6-2 infinite linear 0.5s;
-      height: 50%;
-      transform: translate(0, -100%);
-      animation-delay: .5s; }
-    .load6 .pos span:nth-child(3) {
-      animation: load6-3 infinite linear 0.5s;
-      width: 50%;
-      bottom: 0;
-      right: 0;
-      height: 1px;
-      transform: translate(100%, 0); }
-    .load6 .pos span:nth-child(4) {
-      bottom: 0;
-      left: 0;
-      width: 1px;
-      animation: load6-4 infinite linear 0.5s;
-      height: 50%;
-      transform: translate(0, 100%);
-      animation-delay: .5s; }
-    .load6 .pos span:nth-child(5) {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      width: 1px;
-      height: 1px;
-      border-radius: 50%;
-      animation: .5s infinite load6-5; }
+  overflow: hidden;
+}
+.load6 .pos span {
+  position: relative;
+  position: absolute;
+  background: #1282eb;
+  animation-delay: 3s;
+  opacity: 1;
+}
+.load6 .pos span:nth-child(1) {
+  top: 0;
+  left: 0;
+  height: 1px;
+  animation: load6-1 infinite linear 0.5s;
+  width: 50%;
+  transform: translate(-100%, 0);
+}
+.load6 .pos span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 1px;
+  animation: load6-2 infinite linear 0.5s;
+  height: 50%;
+  transform: translate(0, -100%);
+  animation-delay: .5s;
+}
+.load6 .pos span:nth-child(3) {
+  animation: load6-3 infinite linear 0.5s;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  transform: translate(100%, 0);
+}
+.load6 .pos span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  animation: load6-4 infinite linear 0.5s;
+  height: 50%;
+  transform: translate(0, 100%);
+  animation-delay: .5s;
+}
+.load6 .pos span:nth-child(5) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  animation: .6s infinite load6-5;
+}
 
 @keyframes load6-1 {
   100% {
-    transform: translate(100%, 0); } }
+    transform: translate(100%, 0);
+  }
+}
 @keyframes load6-2 {
   100% {
-    transform: translate(0, 100%); } }
+    transform: translate(0, 100%);
+  }
+}
 @keyframes load6-3 {
   100% {
-    transform: translate(-100%, 0); } }
+    transform: translate(-100%, 0);
+  }
+}
 @keyframes load6-4 {
   100% {
-    transform: translate(0, -100%); } }
+    transform: translate(0, -100%);
+  }
+}
 @keyframes load6-5 {
   50% {
-    transform: scale(15); } }
+    transform: scale(15);
+  }
+}
+.load7 .pos {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.load7 .pos span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #1282eb;
+}
+.load7 .pos span:nth-child(1) {
+  left: 0;
+  top: 0;
+  animation: load7-1 1.6s infinite ease-in-out;
+}
+.load7 .pos span:nth-child(2) {
+  right: 0;
+  top: 0;
+  animation: load7-2 1.6s infinite ease-in-out;
+}
+.load7 .pos span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  animation: load7-3 1.6s infinite ease-in-out;
+}
+.load7 .pos span:nth-child(4) {
+  left: 0;
+  bottom: 0;
+  animation: load7-4 1.6s infinite ease-in-out;
+}
+.load7 .pos span:nth-child(5) {
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  animation: load7-5 1.6s infinite ease-in-out;
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes load7-1 {
+  50% {
+    transform: translate(22.5px, 22.5px) rotate(360deg) scale(1.2);
+  }
+}
+@keyframes load7-2 {
+  50% {
+    transform: translate(-22.5px, 22.5px) rotate(360deg) scale(1.2);
+  }
+}
+@keyframes load7-3 {
+  50% {
+    transform: translate(-22.5px, -22.5px) rotate(360deg) scale(1.2);
+  }
+}
+@keyframes load7-4 {
+  50% {
+    transform: translate(22.5px, -22.5px) rotate(360deg) scale(1.2);
+  }
+}
+@keyframes load7-5 {
+  50% {
+    transform: scale(0.2);
+  }
+}
 
 /*# sourceMappingURL=index.css.map */
