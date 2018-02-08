@@ -10,3 +10,6 @@
 [jQuery图片放大镜，演示地址：](http://www.zongdusir.top/Orignpart/zd-magnifier/)http://www.zongdusir.top/Orignpart/zd-magnifier/
 
 [原生js和jquery两种方式实现点击按钮水波纹，演示地址：](http://www.zongdusir.top/Orignpart/Jq%20Ripple/)http://www.zongdusir.top/Orignpart/Jq%20Ripple/
+
+
+[Css-loading动画，演示地址:](http://www.zongdusir.top/Orignpart/loadingCss/)http://www.zongdusir.top/Orignpart/loadingCss/
