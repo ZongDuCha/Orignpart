@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free drag</title>
+    <link rel="stylesheet" href="./drag.css">
+</head>
+<body>
+<div class="drag-container">
+    <img src="./1.jpg" alt="" width="600" class="drag-opa">
+    <img src="./1.jpg" alt="" width="600" class="drag-clip">
+    <div class="drag-move">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<div class="clip-show" style="position:relative">
+</div>
+</body>
+<script src="jq.js"></script>
+<script src="drag.js"></script>
+<script>
+    $('.drag-container').drag({
+        'clipShow': '.clip-show'
+    })
+</script>
+</html>

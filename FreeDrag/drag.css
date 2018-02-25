@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.drag-container {
+  position: relative;
+  background: #fff; }
+  .drag-container img {
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .drag-container .drag-opa {
+    opacity: .3; }
+  .drag-container .drag-clip {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .drag-container .drag-move {
+    position: relative;
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ca0000;
+    cursor: -webkit-grabbing;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .drag-container .drag-move span {
+      width: 5px;
+      z-index: 3;
+      position: absolute;
+      background: #ca0000;
+      width: 7px;
+      height: 7px; }
+      .drag-container .drag-move span:nth-child(1) {
+        top: -3.5px;
+        left: -3.5px;
+        cursor: nw-resize; }
+      .drag-container .drag-move span:nth-child(2) {
+        top: -3.5px;
+        right: -3.5px;
+        cursor: sw-resize; }
+      .drag-container .drag-move span:nth-child(3) {
+        bottom: -3.5px;
+        right: -3.5px;
+        cursor: se-resize; }
+      .drag-container .drag-move span:nth-child(4) {
+        bottom: -3.5px;
+        left: -3.5px;
+        cursor: sw-resize; }
+
+/*# sourceMappingURL=drag.css.map */
